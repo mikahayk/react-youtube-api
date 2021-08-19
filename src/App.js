@@ -23,7 +23,7 @@ function App() {
       v_id: data.v_id,
       title: data.title
     })
-    const { backend_data } = await backend_response;
+    const { backend_data } = backend_response;
 
     // TO DO
     // Parse response ...
@@ -41,7 +41,7 @@ function App() {
           key: process.env.REACT_APP_YOUTUBE_API_KEY
         }
       })
-      const { data } = await response;
+      const { data } = response;
       
       if(data.items[0]) {
         

@@ -14,11 +14,20 @@ REACT_APP_YOUTUBE_API_KEY=XXXXXXX
 3. In the project directory, you can run:
 
 ```javascript
-npm start
+### npm start
 ```
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+
+4. As React runs in browser there is no file system to write to. In order to write a log to a file in the root directory, app sends an API request from React to a server. Then I have that server write to the file system.
+Make sure to run the Node backend which will run the server on localhost port 5000. 
+
+```javascript
+node backend/app.js
+```
+
 
 ## App Structure
 In order to understand our app structure clearly you can look at component hierarchy which is shown below:
