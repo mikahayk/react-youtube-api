@@ -77,7 +77,7 @@ function App() {
   let content;
   if (loading) content = <Loader />;
   else if(errorMsg) content = <Error message={errorMsg} />;
-  else content = featuredVideo ? <VideoDetail featuredVideo={featuredVideo}/> : 'example: dQw4w9WgXcQ'
+  else content = featuredVideo ? <VideoDetail featuredVideo={featuredVideo}/> : 'example: xvFZjo5PgG0'
 
   return (
     <div className="container">
