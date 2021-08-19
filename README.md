@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Execution
 
-1. After cloning the repo run the following command in root and ./backend directories to install node modules
+1. After cloning the repo, run the following command in root and ./backend directories to install node modules
 ```javascript
 ### npm install
 ```
