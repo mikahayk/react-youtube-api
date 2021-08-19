@@ -8,7 +8,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ```javascript
 ### npm install
 ```
-2. First, create an *.env* file in the root of the project.
+2. Create an *.env* file in the root of the project.
 3. Add Youtube API KEY as follows
 
 ```javascript
