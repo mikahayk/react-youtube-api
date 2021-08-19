@@ -4,22 +4,26 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Execution
 
-1. First, create an *.env* file in the root of the project.
-2. Add Youtube API KEY as follows
+1. After cloning the repo run the following command in root and ./backend directories to install node modules
+```javascript
+### npm install
+```
+2. First, create an *.env* file in the root of the project.
+3. Add Youtube API KEY as follows
 
 ```javascript
 REACT_APP_YOUTUBE_API_KEY=XXXXXXX
 ```
 
 
-3. As React runs in browser there is no file system to write to. In order to write a log to a file in the root directory, app sends an API request from React to a server. Then I have that backend server write to the file system.
+4. As React runs in browser there is no file system to write to. In order to write a log to a file in the root directory, app sends an API request from React to a server. Then I have that backend server write to the file system.
 So, make sure to run the Node backend which will run the server on localhost port 5000. 
 
 ```javascript
 node backend/app.js
 ```
 
-4. In the project directory, run the following command to start the front end server:
+5. In the project directory, run the following command to start the front end server:
 
 ```javascript
 npm start
