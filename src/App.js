@@ -17,13 +17,16 @@ function App() {
   }
 
   const setLog = async (data) => {
-    // Save log
 
+    // Make sure /backend/app.js is running on port 5000
     const backend_response = await axios.post('http://localhost:5000/log', {
       v_id: data.v_id,
       title: data.title
     })
     const { backend_data } = await backend_response;
+
+    // TO DO
+    // Parse response ...
   }
 
   const handleFormSubmit = async (vidId) => {
@@ -39,7 +42,7 @@ function App() {
         }
       })
       const { data } = await response;
-  
+      
       if(data.items[0]) {
         
         // Video with vidId is found
@@ -53,7 +56,7 @@ function App() {
         setFeaturedVideo(video);
         setLog(video);
         setLoading(false);
-        
+
       } else {
         
         // Video not found case handled here
