@@ -8,7 +8,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 2. Add
 
 ```javascript
-### REACT_APP_YOUTUBE_API_KEY=XXXXXXX
+REACT_APP_YOUTUBE_API_KEY=XXXXXXX
 ```
 
 3. In the project directory, you can run:
