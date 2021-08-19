@@ -145,3 +145,8 @@ h1 {
   font-size: 1.5em;
   margin: 1em;
 }
+
+.alert {
+  background: #f5cbcb;
+  padding: 20px;
+}

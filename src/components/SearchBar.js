@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-export default function SearchBar( { handleFormSubmit }) {
+export default function SearchBar( { setError, handleFormSubmit }) {
 
     const [vidId, setVidId] = useState('');
 
@@ -8,7 +8,7 @@ export default function SearchBar( { handleFormSubmit }) {
         e.preventDefault();
 
         if(vidId === '') {
-            alert('Please enter a correct Youtube Video ID');
+            setError('Please enter a correct Youtube Video ID');
             return;
         }
 

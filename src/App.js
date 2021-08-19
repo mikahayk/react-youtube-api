@@ -10,13 +10,15 @@ function App() {
 
   const [featuredVideo, setFeaturedVideo] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
 
+  const setError = ( msg ) => {
+    setErrorMsg(msg);
+  }
 
   const handleFormSubmit = async (vidId) => {
     setLoading(true);
-    setError(false);
+    setError('');
 
     try {
       const response = await axios.get('https://www.googleapis.com/youtube/v3/videos', {
@@ -40,28 +42,28 @@ function App() {
       } else {
         // Video not found case handled here
         setLoading(false);
-        setError(true);
-        setErrorMsg(`Video with Id: '${vidId}' doesn't exist. Please try again with correct video Id.`);
+        setError(`Video with Id: '${vidId}' doesn't exist. Please try again with correct video Id.`);
       }
       
     } catch (error) {
       console.log(error.response);
 
       setLoading(false);
-      setError(true);
-      setErrorMsg('There was an error loading the video. Please try again.');
+      setError('There was an error loading the video. Please try again.');
       return error.response;
     }
   
   }
 
+  let content;
+  if (loading) content = <Loader />;
+  else if(errorMsg) content = <Error message={errorMsg} />;
+  else content = featuredVideo ? <VideoDetail featuredVideo={featuredVideo}/> : 'example: dQw4w9WgXcQ'
+
   return (
     <div className="container">
-      <SearchBar handleFormSubmit={handleFormSubmit}/>
-
-      {loading ? <Loader /> : error ? <Error message={errorMsg} /> : featuredVideo ? <VideoDetail featuredVideo={featuredVideo}/> : 'example: dQw4w9WgXcQ' }
-
-
+      <SearchBar setError={setError} handleFormSubmit={handleFormSubmit}/>
+      {content}
     </div>
   );
 }
