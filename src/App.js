@@ -16,6 +16,16 @@ function App() {
     setErrorMsg(msg);
   }
 
+  const setLog = async (data) => {
+    // Save log
+
+    const backend_response = await axios.post('http://localhost:5000/log', {
+      v_id: data.v_id,
+      title: data.title
+    })
+    const { backend_data } = await backend_response;
+  }
+
   const handleFormSubmit = async (vidId) => {
     setLoading(true);
     setError('');
@@ -31,15 +41,21 @@ function App() {
       const { data } = await response;
   
       if(data.items[0]) {
+        
         // Video with vidId is found
-        setFeaturedVideo({
-          title: data.items[0].snippet.title, 
+        const video = {
+          v_id: vidId,
+          title : data.items[0].snippet.title,
           description: data.items[0].snippet.description,
           src: "https://www.youtube.com/embed/" + vidId
-        });
+        }
 
+        setFeaturedVideo(video);
+        setLog(video);
         setLoading(false);
+        
       } else {
+        
         // Video not found case handled here
         setLoading(false);
         setError(`Video with Id: '${vidId}' doesn't exist. Please try again with correct video Id.`);
