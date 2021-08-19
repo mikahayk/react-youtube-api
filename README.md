@@ -32,6 +32,14 @@ npm start
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 
+## Task Requirements
+
+* a text input for youtube video ids
+* a button that, when clicked, pulls that video id, and loads data from youtube api
+* embeds video on the page
+* pulls video title and description programmatically from youtube api, displays alongside the video
+* logs all video-ids and video titles in a log file local to the project
+
 ## App Structure
 In order to understand our app structure clearly you can look at component hierarchy which is shown below:
 
